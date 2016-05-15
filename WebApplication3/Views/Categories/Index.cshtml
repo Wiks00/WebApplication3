@@ -1,0 +1,55 @@
+﻿@model IEnumerable<WebApplication3.Models.CATEGORIES>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @if (User.Identity.Name == "z@z.z")
+        {
+           @Html.ActionLink("Create New", "Create"); <b>|</b>
+        }
+        @if (User.Identity.Name == "z@z.z")
+        {
+            @Html.ActionLink("Create New Item","Create","Items");
+        }
+        
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                Название
+                
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                
+                @Html.ActionLink(item.CATEGORYNAME, "GOtoItems", new { id = item.CATEGORYID })
+            </td>
+            <td>
+                @if (User.Identity.Name == "z@z.z") { 
+                    
+                @Html.ActionLink("Edit", "Edit", new { id=item.CATEGORYID })    <b>|</b>
+                @Html.ActionLink("Details", "Details", new { id=item.CATEGORYID }) <b>|</b>
+                @Html.ActionLink("Delete", "Delete", new { id=item.CATEGORYID })
+                }
+                
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

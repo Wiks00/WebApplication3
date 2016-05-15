@@ -1,0 +1,98 @@
+﻿@model WebApplication3.Models.ORDERS
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>Orders</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.ORDERDATA)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ORDERDATA)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ARRIVEDATA)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ARRIVEDATA)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.INVOICENUMBER)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.INVOICENUMBER)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.SUMM)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.SUMM)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ITEMORDER.FirstOrDefault(i => i.ORDERID == model.ORDERID).ITEMORDERID)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ITEMORDER.FirstOrDefault(i => i.ORDERID == model.ORDERID).ITEMORDERID)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.BASCKET.PHONE)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Bascket.Phone)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Managers.FullName)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Managers.FullName)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Stock.Adress)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Stock.Adress)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ItemOrder.ItemOrderID)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ItemOrder.ItemOrderID)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.OrderID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

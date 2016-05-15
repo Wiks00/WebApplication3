@@ -1,0 +1,104 @@
+﻿@model WebApplication3.Models.ORDERS
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+</head>
+<body>
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+        <h4>Orders</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.ORDERDATA)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ORDERDATA)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ARRIVEDATA)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ARRIVEDATA)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.INVOICENUMBER)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.INVOICENUMBER)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.SUMM)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.SUMM)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ITEMORDER.FirstOrDefault(i => i.ORDERID == model.ORDERID).ITEMORDERID)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ITEMORDER.FirstOrDefault(i => i.ORDERID == model.ORDERID).ITEMORDERID)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.BASCKET.PHONE)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.BASCKET.PHONE)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.MANAGERS.FULLNAME)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.MANAGERS.FULLNAME)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.STOCK.ADRESS)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.STOCK.ADRESS)
+            </dd>
+
+            <!--<dt>
+                @Html.DisplayNameFor(model => model.ITEMORDER.FirstOrDefault(i => i.ORDERID == model.ORDERID).ITEMORDERID)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ITEMORDER.FirstOrDefault(i => i.ORDERID == model.ORDERID).ITEMORDERID)
+            </dd>-->
+    
+        </dl>
+    
+        @using (Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+    
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>
+</body>
+</html>

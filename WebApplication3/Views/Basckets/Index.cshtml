@@ -1,0 +1,47 @@
+﻿@model IEnumerable<WebApplication3.Models.BASCKET>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PHONE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.USERSS.LOGIN)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PHONE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.USERSS.LOGIN)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.BASCKETID }) |
+                @Html.ActionLink("Details", "Details", new { id=item.BASCKETID }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.BASCKETID })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

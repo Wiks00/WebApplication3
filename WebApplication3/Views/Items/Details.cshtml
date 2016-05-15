@@ -1,0 +1,58 @@
+﻿@model WebApplication3.Models.ITEMS
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>Items</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.ITEMNAME)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ITEMNAME)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.CATEGORIES.CATEGORYNAME)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.CATEGORIES.CATEGORYNAME)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.PRISELIST.PRISELISTID)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.PRISELIST.PRISELISTID)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.SUPPLIERS.SUPPLIERNAME)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.SUPPLIERS.SUPPLIERNAME)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ItemID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

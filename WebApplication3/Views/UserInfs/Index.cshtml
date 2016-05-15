@@ -1,0 +1,52 @@
+﻿@model IEnumerable<WebApplication3.Models.USERINF>
+
+@{
+    ViewBag.Title = "Home";
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+   
+    <table class="table">
+        <tr>
+            <th>
+                ФИО
+            </th>
+            <th>
+                Адрес
+            </th>
+            <th>
+               Телефон
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FULLNAME)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ADRESS)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PHONE)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.USERINFID }) |
+                @Html.ActionLink("Details", "Details", new { id=item.USERINFID }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.USERINFID })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

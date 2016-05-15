@@ -1,0 +1,46 @@
+﻿@model IEnumerable<WebApplication3.Models.ITEMINBASCKET>
+
+@{
+    ViewBag.Title = "Заказ";
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>IndexforAdd</title>
+</head>
+<body>
+   
+    <table class="table">
+        <tr>
+          
+            <th>
+                @Html.DisplayNameFor(model => model.ITEMS.ITEMNAME)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.ITEMS.ITEMNAME)
+            </td>
+            <td>
+                
+                @Html.ActionLink("Заказать", "AddToOrder", new { id = item.ITEMINBASCKETID })|
+                @Html.ActionLink("Удалить", "Delete", new { id=item.ITEMINBASCKETID })
+            </td>
+        </tr>
+    }
+    
+    </table>
+
+    <center>
+        <div>
+            @Html.ActionLink("Перейти к заказу", "GoToOrder")
+        </div>
+    </center>
+</body>
+</html>

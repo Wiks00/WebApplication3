@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Добро Пожаловать!</title>
+    <style>
+        body{
+            background-image: url('../img3.jpg') ;
+            background-size: auto;
+        }
+        a{
+            color:black;
+        }
+       
+        
+    </style>
+
+</head>
+<body>  
+    <h1>Добро Пожаловать! </h1>
+    @if (User.Identity.IsAuthenticated)
+    {
+    <p class="links ">
+        <div>
+            
+            <h2> Нажмите,чтобы посмотреть предыдущие заказы </h2>
+            @Html.ActionLink("Просмотреть предыдущие заказы", "Index", "Orders")
+            
+        </div>
+        <h2> Нажмите,чтобы оформить заказ </h2>
+        <div>@Html.ActionLink("Оформить заказ", "CreateOrder", "ItemOrder1")</div>
+    </p>
+            }
+ 
+</body>
+</html>
